@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="20dp"
+    android:background="#BAB86C">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/roundimage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/cofee3"
+        android:layout_centerHorizontal="true"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="3dp" />
+    <TextView
+        android:id="@+id/categoriesname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/roundimage"
+        android:layout_marginTop="5dp"
+        android:text="Top Picks"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textColor="#400303"
+        android:textSize="15sp" />
+
+
+
+
+</RelativeLayout>

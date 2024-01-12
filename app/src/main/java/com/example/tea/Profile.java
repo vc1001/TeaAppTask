@@ -34,6 +34,7 @@ public class Profile extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), Favourites.class));
                     Toast.makeText(Profile.this, "Favourites", Toast.LENGTH_SHORT).show();
                 } else if (item.getItemId()==R.id.cart) {
+                    startActivity(new Intent(getApplicationContext(), Cart.class));
                     Toast.makeText(Profile.this, "Cart", Toast.LENGTH_SHORT).show();
 
                 } else if (item.getItemId()==R.id.profile) {
