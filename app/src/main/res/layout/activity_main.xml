@@ -8,86 +8,133 @@
     android:id="@+id/drawer_layout"
     android:background="#BAB86C"
     tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/relativelayout">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="70dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/logo" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="90dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="115dp"
-            android:layout_marginTop="80dp"
-            android:src="@drawable/leaf" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hand made Tea Set"
-            android:textSize="26sp"
-            android:layout_marginTop="150dp"
-            android:id="@+id/text"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp"
-            android:textColor="@color/white"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Organic Tea House"
-            android:textSize="40sp"
             android:id="@+id/text1"
-            android:textStyle="italic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:textAlignment="center"
-            android:layout_below="@id/text"
-            android:layout_marginTop="0dp"
-            android:textColor="@android:color/holo_orange_dark"/>
+            android:fontFamily="@font/arizonia"
+            android:text="Organic Tea House"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/leaves"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="20dp" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/teapot"
-            android:layout_marginTop="300dp"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/imageView1" />
-        <Button
-            style="?attr/materialButtonOutlinedStyle"
-            android:id="@+id/outlinedButton"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/text1"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="100dp"
-            android:text="Shop Now" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/searchview_bg"
+            app:iconifiedByDefault="false"
+            app:queryHint="Search Here...." />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_bar"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/search_bar"
+                android:layout_marginBottom="10dp"
+                android:text="Categories"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="italic" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What's on Your Mind?"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/linearlayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other Available Products"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_margin="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="cursive"
+                android:textSize="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/recyclerview3"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
 
     </RelativeLayout>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigation"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
        android:layout_alignParentBottom="true"
-       android:background="#BAB86C"
+       android:background="#45440F"
         app:itemIconTint="@drawable/selector_layout"
         app:itemTextColor="@drawable/selector_layout"
         app:menu="@menu/menu_res"/>
